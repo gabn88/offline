@@ -48,7 +48,7 @@
     if (Offline.getOption('requests') === false) {
       return;
     }
-    Offline.trigger('requests:flush');
+    //Offline.trigger('requests:flush');
     requests = {};
     for (i = 0, len = held.length; i < len; i++) {
       request = held[i];
@@ -75,6 +75,8 @@
       request = requests[key];
       makeRequest(request);
     }
+    
+    Offline.trigger('requests:flush');
     return clear();
   };
 
